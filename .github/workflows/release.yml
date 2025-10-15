@@ -39,6 +39,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - name: Setup Git for private repositories
+        run: |
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
       - name: Install Composer dependencies
         run: |
           composer install --no-progress --prefer-dist --optimize-autoloader
