@@ -39,17 +39,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: Setup Git for private repositories
-        run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-
-      - name: Configure Composer for private repositories
-        run: |
-          composer config github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
-          composer config repositories.pkg-private vcs https://${{ secrets.GITHUB_TOKEN }}@github.com/nannoxtech/pkg-private.git
-
       - name: Install Composer dependencies
         run: |
           composer install --no-progress --prefer-dist --optimize-autoloader
