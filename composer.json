@@ -12,7 +12,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "git@github.com:nannoxtech/pkg-private.git"
+      "url": "git@github.com:Yubisel/pkg-private.git"
     }
   ],
   "require": {
