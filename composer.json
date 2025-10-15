@@ -1,27 +1,37 @@
 {
-    "name": "pkg/consumer",
-    "description": "Package to manage Whitelabels configurations",
-    "license": "Proprietary",
-    "keywords": ["package", "manage", "whitelabels", "configurations"],
-    "type": "library",
-    "repositories": [
-    ],
-    "require": {
-    },
-    "autoload": {
-        "psr-4": {
-            "Pkg\\Configurations\\": "src/Configurations/"
-        },
-        "files": [
-            "src/Configurations/helpers.php"
-        ]
-    },
-    "minimum-stability": "stable",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Pkg\\Configurations\\ServiceProvider"
-            ]
-        }
+  "name": "pkg/consumer",
+  "description": "Package to manage Whitelabels configurations",
+  "license": "Proprietary",
+  "keywords": [
+    "package",
+    "manage",
+    "whitelabels",
+    "configurations"
+  ],
+  "type": "library",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:nannoxtech/pkg-private.git"
     }
+  ],
+  "require": {
+    "pkg/private": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pkg\\Configurations\\": "src/Configurations/"
+    },
+    "files": [
+      "src/Configurations/helpers.php"
+    ]
+  },
+  "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Pkg\\Configurations\\ServiceProvider"
+      ]
+    }
+  }
 }
